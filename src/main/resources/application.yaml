@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: "configserver"
+  config:
+    activate:
+      on-profile:
+        active: git
+  cloud:
+    config:
+      server:
+        #native:
+          #search-locations: "classpath:/config"
+        git:
+          uri: https://github.com/ashishgupta1/configserver.git
+          default-label: main
+          timeout: 5
+          clone-on-start: true
+          force-pull: true
+encrypt:
+  key: "45D81EC13F61DF9AD8D3E5BB307F9"
+server:
+  port: 8071
